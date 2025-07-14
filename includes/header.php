@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $title ; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -19,8 +20,36 @@
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             <a class="nav-link" href="viewrecords.php">View Attendees</a>
           </div>
+          <button id="theme-toggle" class="btn btn-outline-light ms-auto" type="button" aria-label="Toggle dark mode">
+            <i id="theme-icon" class="bi"></i>
+          </button>
         </div>
       </div>
     </nav>
+    <script>
+      // Dark/Light mode toggle logic
+      const body = document.body;
+      const toggleBtn = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      function setTheme(mode) {
+        if (mode === 'dark') {
+          body.classList.add('dark-mode');
+          themeIcon.classList.remove('bi-moon-fill');
+          themeIcon.classList.add('bi-sun-fill');
+        } else {
+          body.classList.remove('dark-mode');
+          themeIcon.classList.remove('bi-sun-fill');
+          themeIcon.classList.add('bi-moon-fill');
+        }
+        localStorage.setItem('theme', mode);
+      }
+      // On load
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+      toggleBtn.onclick = () => {
+        const isDark = body.classList.contains('dark-mode');
+        setTheme(isDark ? 'light' : 'dark');
+      };
+    </script>
     <br>
     <br>
