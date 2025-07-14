@@ -1,13 +1,12 @@
 FROM php:8.2-apache
 
-# Set Apache to use /var/www/html as document root
-RUN sed -i 's!/var/www/html!/var/www/html!' /etc/apache2/sites-available/000-default.conf
+# Install PDO and MySQL driver
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 # Copy your project files into Apache web root
 COPY . /var/www/html/
 
-# Enable Apache mod_rewrite if needed (optional)
+# Enable Apache mod_rewrite (optional)
 RUN a2enmod rewrite
 
-# Expose port 80 for Render
 EXPOSE 80
