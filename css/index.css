@@ -9,12 +9,11 @@
 .dark-mode {
   --bg: #18122B;
   --text: #F3F0FF;
-  --card-bg: #231942;
-  --input-bg: #2D1E4A;
+  --card-bg: #3E2C67;
+  --input-bg: #4B367C;
   --input-border: #fff;
   --primary: #9D4EDD;
 }
-body { border: 10px solid red !important; }
 body {
   background: var(--bg) !important;
   color: var(--text) !important;
@@ -71,4 +70,22 @@ label, .form-text {
   color: var(--primary) !important;
   border-color: #fff !important;
   background: transparent !important;
+}
+
+.dark-mode .navbar, .dark-mode .navbar-nav .nav-link, .dark-mode .navbar-brand {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.dark-mode .card, .dark-mode .form-control, .dark-mode .form-select, .dark-mode .table, .dark-mode .table th, .dark-mode .table td, .dark-mode .list-group-item {
+  border-color: #fff !important;
+}
+
+.dark-mode .card {
+  background: var(--card-bg) !important;
+}
+
+.dark-mode .form-control, .dark-mode .form-select {
+  background: var(--input-bg) !important;
+  color: var(--text) !important;
 }
