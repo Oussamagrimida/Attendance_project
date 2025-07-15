@@ -7,13 +7,14 @@
   --primary: #0d6efd;
 }
 .dark-mode {
-  --bg: #23272b;
-  --text: #e3e6ea;
-  --card-bg: #2d3238;
-  --input-bg: #343a40;
-  --input-border: #6c757d;
-  --primary: #0d6efd;
+  --bg: #18122B;
+  --text: #F3F0FF;
+  --card-bg: #231942;
+  --input-bg: #2D1E4A;
+  --input-border: #fff;
+  --primary: #9D4EDD;
 }
+body { border: 10px solid red !important; }
 body {
   background: var(--bg) !important;
   color: var(--text) !important;
@@ -62,11 +63,12 @@ label, .form-text {
 .dark-mode .card-header {
   background-color: var(--primary) !important;
   color: #fff !important;
+  border-bottom: 2px solid #fff !important;
 }
 .dark-mode .btn-outline-primary,
 .dark-mode .btn-outline-warning,
 .dark-mode .btn-outline-danger {
   color: var(--primary) !important;
-  border-color: var(--primary) !important;
+  border-color: #fff !important;
   background: transparent !important;
 }
