@@ -1,3 +1,7 @@
+<?php 
+//This includes the session file. This file contains code that starts/resumes a session. 
+//By having it in the header file, it will be included on every page, allowing session capability to be used on every page across the website.
+include_once 'includes/session.php'?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,9 +24,21 @@
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             <a class="nav-link" href="viewrecords.php">View Attendees</a>
           </div>
-          <button id="theme-toggle" class="btn btn-outline-light ms-auto" type="button" aria-label="Toggle dark mode">
-            <i id="theme-icon" class="bi"></i>
-          </button>
+          <div class="d-flex ms-auto align-items-center">
+            <?php 
+            if(!isset($_SESSION['userid'])){
+            ?>
+              <a class="btn btn-outline-light me-2" href="login.php">Login</a>
+            <?php } else{?>
+              <span class="navbar-text text-white fw-normal me-3" style="font-family: inherit;">
+                Hello, <strong><?php echo htmlspecialchars(ucfirst($_SESSION['username'])); ?></strong>
+              </span>
+              <a class="btn btn-outline-light me-2" href="logout.php">Logout</a>
+             <?php }?>
+            <button id="theme-toggle" class="btn btn-outline-light" type="button" aria-label="Toggle dark mode">
+              <i id="theme-icon" class="bi"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
