@@ -1,5 +1,6 @@
 <?php $title = 'View Attendees';
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
 
     //Get all attendees

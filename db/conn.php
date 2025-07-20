@@ -1,20 +1,20 @@
 <?php
 
     // Development Connection
-     $host = '127.0.0.1';
+     /*$host = '127.0.0.1';
      $db = 'projectphp';
      $dbuser = 'root';
      $pass = '';
-     $charset = 'utf8mb4';
+     $charset = 'utf8mb4';*/
 
 
 
     // Remote database connection
-    /*$host='sql7.freesqldatabase.com';
+    $host='sql7.freesqldatabase.com';
     $db='sql7790035';
-    $user='sql7790035';
+    $dbuser='sql7790035';
     $pass='Gei1Xd94Aw';
-    $charset='utf8mb4';*/
+    $charset='utf8mb4';
 
     $dsn="mysql:host=$host;dbname=$db;charset=$charset";
 

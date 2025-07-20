@@ -17,7 +17,7 @@
         $isSuccess = $crud->editAttendees($id, $fname, $lname, $dob, $email, $contact, $specialty);
 
         if($isSuccess){
-            echo '<div style="max-width: 500px; margin: 40px auto; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #fff; text-align: center;">
+            echo '<div class="card shadow-lg" style="max-width: 500px; margin: 40px auto; padding: 30px; border-radius: 10px; text-align: center;">
                 <h2 style="color: #28a745; margin-bottom: 20px;">Update Successful!</h2>
                 <div style="text-align: left; margin-bottom: 25px;">
                     <p><strong>First Name:</strong> ' . htmlspecialchars($fname) . '</p>

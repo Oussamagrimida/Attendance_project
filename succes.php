@@ -1,6 +1,7 @@
 <?php $title = 'Success';
     require_once 'includes/header.php';
-    require_once 'db/conn.php'; 
+    require_once 'db/conn.php';
+    require_once 'sendmail.php'; 
     
     if(isset($_POST['submit'])){
         //extract values from the $_POST
@@ -15,6 +16,7 @@
         $isSuccess=$crud->insertAttendees($fname, $lname, $dob, $email,$contact,$specialty);
 
         if($isSuccess){
+            Sendmail::SendMail($email , 'Welcome to It Conference' , 'You have successfully registred for this year ' );
             include "includes/successmessage.php";
                                                                                                 
         }else{
