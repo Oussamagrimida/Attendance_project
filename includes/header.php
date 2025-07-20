@@ -1,13 +1,14 @@
-<?php 
-//This includes the session file. This file contains code that starts/resumes a session. 
-//By having it in the header file, it will be included on every page, allowing session capability to be used on every page across the website.
-include_once 'includes/session.php'?>
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $title ; ?></title>
+    <title><?php echo $title; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -29,12 +30,12 @@ include_once 'includes/session.php'?>
             if(!isset($_SESSION['userid'])){
             ?>
               <a class="btn btn-outline-light me-2" href="login.php">Login</a>
-            <?php } else{?>
+            <?php } else { ?>
               <span class="navbar-text text-white fw-normal me-3" style="font-family: inherit;">
                 Hello, <strong><?php echo htmlspecialchars(ucfirst($_SESSION['username'])); ?></strong>
               </span>
               <a class="btn btn-outline-light me-2" href="logout.php">Logout</a>
-             <?php }?>
+            <?php } ?>
             <button id="theme-toggle" class="btn btn-outline-light" type="button" aria-label="Toggle dark mode">
               <i id="theme-icon" class="bi"></i>
             </button>
@@ -43,7 +44,6 @@ include_once 'includes/session.php'?>
       </div>
     </nav>
     <script>
-      // Dark/Light mode toggle logic
       const body = document.body;
       const toggleBtn = document.getElementById('theme-toggle');
       const themeIcon = document.getElementById('theme-icon');
@@ -59,7 +59,6 @@ include_once 'includes/session.php'?>
         }
         localStorage.setItem('theme', mode);
       }
-      // On load
       const savedTheme = localStorage.getItem('theme') || 'light';
       setTheme(savedTheme);
       toggleBtn.onclick = () => {
@@ -67,5 +66,4 @@ include_once 'includes/session.php'?>
         setTheme(isDark ? 'light' : 'dark');
       };
     </script>
-    <br>
-    <br>
+    <br><br>
