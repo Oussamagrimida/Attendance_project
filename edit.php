@@ -1,5 +1,4 @@
-
-    <?php $title = 'Edit';
+<?php $title = 'Edit';
     require_once 'includes/header.php';
     require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
@@ -15,7 +14,7 @@
         $attendee=$crud->getAttendeesByid($id);
     
 
-    ?>
+?>
 
     <div class="container">
   <div class="row justify-content-center mt-6">

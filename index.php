@@ -1,11 +1,10 @@
-
-    <?php $title = 'Home';
+<?php $title = 'Home';
     require_once 'includes/header.php';
     require_once 'db/conn.php';
 
     $results= $crud->getSpeciality();
 
-    ?>
+?>
 
     <div class="container">
   <div class="row justify-content-center mt-5">
